@@ -4,7 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [pandect "0.6.1"]]
+                 [pandect "0.6.1"]
+                 [net.tbt-post/zlib-tiny "0.2.0"]]
   :main ^:skip-aot git-in-clojure.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
