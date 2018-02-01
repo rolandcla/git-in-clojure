@@ -1,0 +1,3 @@
+# git-in-clojure
+
+Un petit essai de réecriture des bases de GIT avec Clojure...
