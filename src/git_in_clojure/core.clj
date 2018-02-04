@@ -10,6 +10,24 @@
 (def GIT-DIR "git-test-dir")
 (def RE-OBJ #"(.*)\s(\d+)\u0000(.*)")
 
+;; Index ---------------------------------------------------------------------------------
+
+(defn init-index []
+  {:header {:version 0
+            :n-of-entries 0}
+   :entries []
+   :extensions []
+   :sha-1 0})
+
+(defn load-index []
+  (read-string (slurp (io/file GIT-DIR "index"))))
+
+(defn save-index [index]
+  (spit (io/file GIT-DIR "index")
+        (str index)))
+
+;; --------------------------------------------------------------------------------------
+
 (defn git-object
   [object-type content]
   (format "%s %d\0%s" object-type (count content) content))
